@@ -117,7 +117,7 @@ const Students = () => {
     const exportToPDF = () => {
         const doc = new jsPDF();
         doc.autoTable({ html: '#student-table' }); // Ensure your table has the ID 'student-table'
-        doc.save('studentRecords.pdf');
+        doc.save('student.pdf');
     };
 
     const tableColumns = ["Name", "Gender", "Age", "English Grade", "Math Grade", "Science Grade", "Action"];
@@ -136,7 +136,7 @@ const Students = () => {
                         </div>
 
                         <div className="overflow-x-auto py-5 px-5">
-                            <table className="min-w-full divide-y-2 divide-gray-200 bg-white rounded-lg shadow-sm text-sm">
+                            <table className="min-w-full divide-y-2 divide-gray-200 bg-white rounded-lg shadow-sm text-sm" id="student-table">
                                 <thead className="ltr:text-left rtl:text-right">
                                 <tr>
                                     {tableColumns.map((column, index) => (
